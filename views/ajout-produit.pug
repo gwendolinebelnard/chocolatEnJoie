@@ -1,0 +1,31 @@
+form(method="post" enctype="multipart/form-data")
+    select(name="category" type="text")
+      option Categorie
+      option(value='chocolat noir') chocolat noir
+      option(value='chocolat blanc') chocolat blanc
+      option(value='chocolat lait') chocolat lait
+      option(value='chocolat mix') chocolat mix
+    br
+    br
+    input(name="name" type="text" placeholder="Nom")
+    br
+    br
+    textarea(name="description" type="text" placeholder="Description")
+    br
+    br
+    input(name="composition" type="text" placeholder="Composition")
+    br
+    br
+    input(name="quantity" type="text" placeholder="Quantité")
+    br
+    br
+    input(name="weight" type="text" placeholder="Poids")
+    br
+    br
+    input(name="image" type="file")
+    br
+    br
+    button Enregistrer
+
+script(src="https://cloud.tinymce.com/stable/tinymce.min.js")
+script(src="/js/script.js")

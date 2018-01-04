@@ -1,0 +1,19 @@
+mixin fiche-produit(imageLink, imageId, title, paragraphe1, title2, paragraphe2, id)
+  - var path = "/image/"
+  article
+      // FICHE PRODUIT MODAL BOOTSTRAP
+      .modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' id=id)
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+            .modal-body.text-center
+              img(src=path + imageLink, alt='#{imageId}')
+              div
+                h2=title
+                p=paragraphe1
+                h2=title2
+                p=paragraphe2
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close

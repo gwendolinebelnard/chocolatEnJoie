@@ -1,0 +1,57 @@
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href='/logout') Chocolat En Joie
+    ul.nav.navbar-nav
+      li.active
+        a(href='/admin') Accueil
+      li
+        a(href='/admin/produits') Produits
+      li
+        a(href='/admin/ateliers') Ateliers
+
+h2.text-center Cette page vous permet de modifier, supprimer et/ou ajouter un produit.  
+ul.pager.col-lg-12
+  li.previous
+    a(href='./logged')
+      span.glyphicon.glyphicon-backward
+      |  Accueil
+
+
+a(href="/admin/produits/ajouter" class="btn btn-success") Ajouter un produit
+br
+br
+a(href="/logout" class="btn btn-danger") Déconnexion 
+br
+br
+table.table.table-striped.table-bordered
+    tr
+        th #
+        th Catégorie
+        th Nom du produit
+        th Description
+        th Composition
+        th Quantité
+        th Poids
+        th Position
+        th Photo
+        th
+        th
+    each product in products
+        tr
+            td=product.id
+            td=product.category
+            td=product.name
+            td=product.description
+            td=product.composition
+            td=product.quantity
+            td=product.weight
+            td=product.position
+            td
+                img(src="/images/" + product.image height="50")
+            td
+                a(href="/admin/produits/modifier/" + product.id class="btn btn-info") Modifier
+            td
+                a(href="/admin/produits/supprimer/" + product.id onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?');" class="btn btn-warning") Supprimer

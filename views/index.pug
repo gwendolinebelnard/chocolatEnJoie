@@ -1,0 +1,239 @@
+extends layout 
+
+block content
+  // Section ACCUEIL
+  section
+    .container-fluid
+      .row
+        .col-xs-12.text-center.bghomepage
+          .col-sm-6.col-sm-offset-3
+            .items-home-1
+              img.logohome.img-responsive(src='/images/logo-white.svg', alt='')
+            h2.items-home
+              | “Une vie sans chocolat 
+              br
+              | est une vie à laquelle manque l'essentiel...”
+            .items-home
+              img(src='/images/_accueil/bienvenue-white.svg', alt='')
+  // Section MISE EN AVANT DE PRODUITS
+  section(id='produits container-fluid')
+    .color
+      .container-fluid
+        .wrapper
+          .row
+            .col-sm-12.text-center
+              h2.titreProduct.center-block.text-center
+                | Nos
+                br
+                | suggestions
+              p Découvrez nos créations
+          .containerSuggestions
+            .col-md-8.col-md-offset-2.col-xs-12
+              .row.ecartementTextEtImage
+                // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                each product in products
+                  if product.position=="gauche"
+                    .col-sm-4
+                      a(href='#')
+                        .suggestion-wrapper.suggestion
+                          .row
+                            .col-sm-12.colNoPadding
+                              img.img-responsive(src="/images/" + product.image, alt='')
+                          .row
+                            .text-center.col-sm-12
+                              h3=product.name
+                          .row
+                            .text-center.col-sm-12
+                              h5=product.composition
+                          .row
+                            .text-center.col-sm-6.suggestionNbPieces
+                              h4=product.quantity
+                            .text-center.col-sm-6.suggestionPoids
+                              h5=product.weight
+                // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                each product in products
+                  if product.position=="centre"
+                    .col-sm-4
+                      a(href='#')
+                        .suggestion-wrapper.suggestion
+                          .row
+                            .col-sm-12.colNoPadding
+                              img.img-responsive(src="/images/" + product.image, alt='')
+                          .row
+                            .text-center.col-sm-12
+                              h3=product.name
+                          .row
+                            .text-center.col-sm-12
+                              h5=product.composition
+                          .row
+                            .text-center.col-sm-6.suggestionNbPieces
+                              h4=product.quantity
+                            .text-center.col-sm-6.suggestionPoids
+                              h5=product.weight
+                // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                each product in products
+                  if product.position=="droite"
+                    .col-sm-4
+                      a(href='#')
+                        .suggestion-wrapper.suggestion
+                          .row
+                            .col-sm-12.colNoPadding
+                              img.img-responsive(src="/images/" + product.image, alt='')
+                          .row
+                            .text-center.col-sm-12
+                              h3=product.name
+                          .row
+                            .text-center.col-sm-12
+                              h5=product.composition
+                          .row
+                            .text-center.col-sm-6.suggestionNbPieces
+                              h4=product.quantity
+                            .text-center.col-sm-6.suggestionPoids
+                              h5=product.weight
+              // row
+            // Container-fluid 2
+        // wrapper
+    // color
+  // Section DÉMARCHE QUALITÉ
+  //
+    <section>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-xs-12 text-center bghomepage">
+    <div class="items-wrap-home">
+    <div class="items-home"> <img src="image/logo-white.svg" alt=""></div>
+    <h2 class="items-home">“Une vie sans chocolat est une vie à laquelle manque l'essentiel...”</h2>
+    <div class="items-home"> <img src="image/_accueil/bienvenue-white.svg" alt=""></div>
+    </div>
+    </div>
+    </div>
+    </div>
+  section.container-fluid(class='qualité')
+    .row
+      .col-xs-12 
+        .demarche-title
+        .containerlabels
+          .paquet2
+            .item-label
+              img(src='/images/_section-demarche/logo5.svg')
+              p.titrelabel Circuits courts
+              p.contenulabel
+                | Nos fournisseurs travaillent 
+                br
+                |  tous en Île-de-France
+            .item-label
+              img(src='/images/_section-demarche/logo6.svg')
+              p.titrelabel Agriculture Bio
+              p.contenulabel
+                | Pas d’alternative possible 
+                br
+                | Go green!
+          .paquet2      
+            .item-label
+              img(src='/images/_section-demarche/logo7.svg')
+              p.titrelabel Sans OGM
+              p.contenulabel
+                | Pas question de manger 
+                br
+                | ces cochonneries.
+            .item-label
+              img(src='/images/_section-demarche/logo8.svg' height='100')
+              p.titrelabel  Sans Nucléaire
+              p.contenulabel Ça va pas la tête?
+                br
+                | !!!!!!!!!!!!!!!!!!!!!!!!!!  
+    .message-sympa
+      h2
+        | 100% SYMPA 
+        br
+        | POUR L'ENVIRONNEMENT
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Section Atelier
+  //
+    <section id="ateliers">
+    <div id="goto-atelier"></div>
+    <div class="container-fluid">
+    <div class="row center-block">
+    <div class="col-lg-12 text-center bgateliers">
+    <h3 class="items-ateliers center-block">NOS<br>ATELIERS</h3>
+    </div>
+    </div>
+    <div class="row center-block">
+    <div class="col-lg-4 col-lg-offset-4 center-block text-center items-wrap-ateliers">
+    <p>MERCREDI 19 OCTOBRE</p>
+    <h2 class="items-ateliers">MOUSSE<br>AU CHOCOLAT</h2>
+    <a href="contact.html"><button type="button" class="btn btn-default">Je m'inscris</button></a>
+    </div>
+    </div>
+    </div>
+    </section>
+  section#ateliers           
+      #goto-atelier.container-fluid
+        .row.center-block
+          .col-lg-12.text-center.bgateliers
+            h3.items-ateliers.center-block
+              | LES
+              br
+              | ATELIERS
+            .items-wrap-ateliers.center-block
+              p=event.date
+              h2.items-ateliers=event.name
+              a(href='/contact')
+                button.btn.btn-default(type='button') Je m'inscris
+  // Section NOUS TROUVER
+  section#localisation.container-fluid
+    #goto-noustrouver
+    .row
+      .col-xs-12.center-block.text-center.title
+        h2 Nous trouver
+    .row
+      .col-xs-12.center-block.iframe
+        iframe(height='300', frameborder='0', style='border:0', src='https://www.google.com/maps/embed/v1/search?key=AIzaSyCrssm87fPaXFGodWXlx4ifBBvVUAn0Mc0&q=11+Rue+de+Poissy,Paris+France', allowfullscreen='')
+    .row
+      .col-xs-12.col-md-4.col-lg-4.text-center
+        br
+        img.img-responsive.center-block(src='/images/iconLieu.png', alt='Icone adresse', width='8%')
+        br
+        p
+          | Chocolat en Joie
+          br
+          | 11, rue de Poissy
+          br
+          | 75005 PARIS
+          br
+          |  Tel. : 06 45 67 76 58
+      .col-xs-12.col-md-4.col-lg-4.text-center
+        br
+        img.img-responsive.center-block(src='/images/iconHoraires.png', alt="Icone horaires d'ouverture", width='8%')
+        br
+        p
+          | Notre boutique est ouverte
+          br
+          | du lundi au samedi
+          br
+          | de 09h00 à 20h00
+          br
+          | (sans interruption)
+        br
+      .col-xs-12.col-md-4.col-lg-4.text-center
+        br
+        img.img-responsive.center-block(src='/images/iconMetro.png', alt='Icone du métro', width='8%')
+        br
+        p
+          | Ligne 10 : Jussieu ou Maubert Mutualité
+          br
+          | Ligne 7 : Jussieu
+  // Footer
+ 

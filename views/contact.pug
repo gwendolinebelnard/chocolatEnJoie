@@ -1,0 +1,84 @@
+extends layout
+
+block content 
+    section#contact
+      .container-fluid
+        .row
+          .col-xs-12.bgcontact
+            a.center-block(href='#goto-form')
+              i.fa.fa-angle-down.fa-3x.center-block
+        .col-lg-8.col-lg-offset-2
+          #goto-form
+            br
+          h1 NOUS CONTACTER
+          form#contact-form(method='post', action='', role='form')
+            .controls
+              .row
+                .col-md-6
+                  br
+                  .form-group
+                    label(for='form_name') Votre prénom *
+                    input#form_name.form-control(type='text', name='name', placeholder='prénom', required='required')
+                    small#emailHelp.form-text.text-muted Nous ne partagerons jamais vos données avec un tiers.
+                .col-md-6
+                  br
+                  .form-group
+                    label(for='form_lastname') Votre nom *
+                    input#form_lastname.form-control(type='text', name='surname', placeholder='nom', required='required')
+                    small#emailHelp.form-text.text-muted Nous ne partagerons jamais vos données avec un tiers.
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='form_email') Votre email *
+                    input#form_email.form-control(type='email', name='email', placeholder='email', required='required')
+                    small#emailHelp.form-text.text-muted Nous ne partagerons jamais vos données avec un tiers.
+                .col-md-6
+                  .form-group
+                    label(for='form_phone') Votre téléphone
+                    input#form_phone.form-control(type='tel', name='phone', placeholder='numéro de téléphone')
+                    small#emailHelp.form-text.text-muted Nous ne partagerons jamais vos données avec un tiers.
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='form_address') Votre adresse postale *
+                    input#form_address.form-control(type='text', name='adress', placeholder='rue', required='required')
+                    small#emailHelp.form-text.text-muted Nous ne partagerons jamais vos données avec un tiers.
+              .row
+                .col-md-2
+                  .form-group
+                    input#form_zip.form-control(type='text', name='zip', placeholder='code postal', required='required')
+                .col-md-4
+                  .form-group
+                    input#form_city.form-control(type='text', name='city', placeholder='ville', required='required')
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='exampleSelect1') Sélectionner votre sujet *
+                    select#exampleSelect1.form-control(name='subject')
+                      option
+                      option(value='Inscription') Inscription atelier
+                      option(value='Démarche éco-responsable') Démarche éco-responsable
+                      option(value='Recettes') Recettes
+                      option(value='Prix') Prix
+                      option(value='Horaires') Horaires
+                      option(value='Autres') Autre
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='form_message') Message *
+                    textarea#form_message.form-control(name='message', placeholder='Saisir votre message...', rows='4', required='required', data-error='Please,leave us a message.')
+                .col-md-12
+                  .g-recaptcha(data-sitekey='6LcLZzcUAAAAAN5TDOz0d8ylAg8hnwoqs4skE-TM')
+                .col-md-12.col-md-push-5
+                  button.btn.btn-primary(type='submit') Envoyer
+                  // <input type="submit" class="btn btn-success btn-send light_purple_bg" value="Send message">
+                .row
+                  .col-md-12
+                    p.text-muted
+                      small
+                        strong *
+                        |  Champs obligatoires.
+          .g-recaptcha(data-sitekey='6LcLZzcUAAAAAN5TDOz0d8ylAg8hnwoqs4skE-TM')
+        // /.col-lg-8
+      // /.row
+      // container-fluid

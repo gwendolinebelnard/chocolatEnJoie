@@ -1,0 +1,19 @@
+.titrePageProduit{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    border-bottom: 10px white double;
+    font-weight: bolder;
+    width: 350px;
+}
+
+.titreSection{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    border-bottom: 10px black double;
+    font-weight: bolder;
+    display: inline;
+    margin-top: 20px;
+}
+
+

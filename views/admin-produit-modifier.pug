@@ -1,0 +1,65 @@
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href='/logout') Chocolat En Joie
+    ul.nav.navbar-nav
+      li.active
+        a(href='/admin') Accueil
+      li
+        a(href='/admin/produits') Produits
+      li
+        a(href='/admin/ateliers') Ateliers
+
+h2.text-center Cette page vous permet de modifier un produit.  
+ul.pager.col-lg-12
+  li.previous
+    a(href='/admin/produits')
+      span.glyphicon.glyphicon-backward
+      |  Retour produits
+br
+a(href="/logout" class="btn btn-danger") Déconnexion 
+br
+
+
+form(method="POST" enctype="multipart/form-data")
+    .form-group
+    label(for='exampleSelect1') Sélectionner la catégorie du produit :
+    br
+    select(name="category" type="text")
+      option Catégorie
+      option(value='chocolat noir') Chocolat noir
+      option(value='chocolat blanc') Chocolat blanc
+      option(value='chocolat lait') Chocolat lait
+      option(value='chocolat mix') Chocolat mix
+    .form-group
+    label(for='') Sélectionner la position du produit dans la section suggestions (home-page) :
+    br
+    select(name="position" type="text")
+      option Position
+      option(value='gauche') gauche
+      option(value='centre') centre
+      option(value='droite') droite
+    .form-group
+    label(for='name') Nom du produit
+    input#title.form-control(type='text' placeholder='Nom du produit' name="name" value=product.name)
+    .form-group
+    label(for='description') Description
+    textarea#text.form-control(placeholder='Description' name="description")=product.description
+    .form-group
+    label(for='composition') Composition
+    textarea#text.form-control(placeholder='Composition' name="composition")=product.composition
+    .form-group
+    label(for='quantity') Quantité
+    input#title.form-control(type='text' placeholder='Quantité' name="quantity" value=product.quantity)
+    .form-group
+    label(for='weight') Poids
+    input#title.form-control(type='text' placeholder='Poids' name="weight" value=product.weight)
+    .form-group
+    img(src='/images/'+ product.image height='50')
+    br
+    label(for='exampleInputFile') Merci de télécharger à nouveau une photo inférieure à 3Go et de format jpg ou png
+    input#file.form-control(type='file' placeholder='image' name="image" value=product.image)
+    br
+    button.btn.btn-success(type='submit') Enregistrer

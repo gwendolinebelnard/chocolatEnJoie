@@ -1,0 +1,64 @@
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href='/logout') Chocolat En Joie
+    ul.nav.navbar-nav
+      li.active
+        a(href='/admin') Accueil
+      li
+        a(href='./produits') Produits
+      li
+        a(href='./ateliers') Ateliers
+
+
+h2 Bonjour M. Ducerf, cette page vous permet de modifier, le nom, la date  et l'image de fond de vos ateliers.  
+a(href="/logout" class="btn btn-danger") Déconnexion 
+br
+br
+a(href="/admin/ateliers/modifier" class="btn btn-success") Modifier l'évènement 
+br 
+br 
+
+table(border="1" width="100%")
+    tr
+        th #
+        th name 
+        th date
+
+    each product in products
+        tr
+            td=product.id
+            td=product.name
+            td=product.date 
+        
+
+
+br 
+br  
+
+table(border="1" width="100%")
+    tr
+        th #
+        th name 
+        th image
+        th action
+
+        tr
+    each product in products
+            td 1
+            td Image de fond section Ateliers
+            td
+                img(src="/images/background3.png" height="100")
+            td 
+                // a(href="/admin/new-background?id=1") Nouveau background
+                // On est par défaut sur cette route /admin/ateliers
+                p Choisir une nouvelle image
+                form(method="POST" action="/admin/new-background" enctype='multipart/form-data') 
+                    br
+                    input(name="new-background" type="file" placeholder="")
+                    button(type='submit') Valider   
+                    br
+                br
+                

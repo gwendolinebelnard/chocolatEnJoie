@@ -1,0 +1,199 @@
+doctype html
+// Internet explorer conditions
+//
+  if lte IE 6html.preIE7.preIE8.preIE9
+//
+  if IE 7html.preIE8.preIE9
+//
+  if IE 8html.preIE9
+//if gte IE 9
+  | [if gte IE 9]
+html
+  // <![endif]
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    // À approfondir
+    meta(name='author', content='name')
+    meta(name='description', content='texte explicatif 150 caractères max')
+    meta(name='keywords', content='keywords,here')
+    // Bootstrap
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    // Favicon
+    link(rel='shortcut icon', href='/images/favicon.svg', type='/images/favicon.svg')
+    link(rel='icon', type='/images/png', href='/images/favicon.png')
+    // Google fonts
+    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700,900', rel='stylesheet') 
+    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css')
+    // Fichier CSS
+    link(rel='stylesheet', href='/css/style.css', type='text/css')
+    // Meta property et name pour réseaux sociaux
+    // Google console?
+    // URL canonique?
+    title Chocolat en joie
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" )
+    script(src='///cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js')    
+    script.
+      window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#000"
+          },
+          "button": {
+            "background": "#f1d600"
+          },
+          "position": "bottom-right"
+        }
+      })});
+  body
+    header
+      // BARRE DE NAVIGATION
+    
+    
+      nav#navbar.navbar.navbar-toggleable-md.navbar-light.bg-faded.col-xs-12
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav.text-center
+            li.nav-item
+              a.nav-link(href='/') Accueil 
+            li.nav-item 
+              span.losange ◆
+            li.nav-item
+              a.nav-link(href='/produits') Nos produits
+            li.nav-item
+              span.losange ◆
+            li.nav-item
+              a.nav-link(href='https://www.pinterest.fr/eplougoulm/-chocolat-en-joie-nos-recettes/') Nos recettes
+            li.nav-item
+              span.losange ◆
+            .logo-navbar
+              a(href='')
+            li.nav-item
+              span.losange ◆
+            if index
+              li.nav-item
+                a.nav-link.sliding-link(href='#goto-atelier') Nos ateliers
+              li.nav-item
+                span.losange ◆
+              li.nav-item
+                a.nav-link.sliding-link(href='#goto-noustrouver') Nous trouver
+            else
+              li.nav-item
+                a.nav-link(href='/#goto-atelier') Nos ateliers
+              li.nav-item
+                span.losange ◆
+              li.nav-item
+                a.nav-link(href='/#goto-noustrouver') Nous trouver
+            li.nav-item
+              span.losange ◆
+            li.nav-item
+              a.nav-link(href='/contact') Nous contacter
+        .social
+          ul.item-social
+            li
+              a(href='https://www.facebook.com/les.amis.du.chocolat/')
+                img(src='/images/_social-icons/i_facebook.svg', alt='facebook logo' )
+            li
+              a(href='https://www.instagram.com/explore/tags/chocolat/')
+                img(src='/images/_social-icons/i_instagram.svg', alt='instagram logo' )
+            li
+              a(href='https://www.pinterest.fr/eplougoulm/-chocolat-en-joie-nos-recettes/')
+                img(src='/images/_social-icons/i_pinterest.svg', alt='pinterest logo')
+
+    // BURGER MENU
+    .header-burger
+      .burger-container
+        #burger
+          .bar.topBar
+          .bar.btmBar
+      ul.menu
+        li.menu-item
+          a(href='/') Accueil
+        li.menu-item
+          a(href='/produits') Nos produits
+        li.menu-item
+          a(href='https://www.pinterest.fr/eplougoulm/-chocolat-en-joie-nos-recettes/') Nos recettes
+        li.menu-item
+          a(href='#') Nos ateliers
+        li.menu-item
+          a(href='#') Nous trouver
+        li.menu-item
+          a(href='/contact') Nous contacter
+
+
+    block content 
+
+
+    .content
+    footer#myFooter
+      .container
+        .row
+          .col-sm-3
+            img(src='/images/logo-white.svg', alt='Logo Chocolat en Joie')
+          .col-sm-2
+            ul
+              li
+                a(href='/') Accueil
+              li
+                a(href='/produits') Nos produits
+              li
+                a(href='https://www.pinterest.fr/eplougoulm/-chocolat-en-joie-nos-recettes/') Nos recettes
+          .col-sm-2
+            ul
+              if index
+                li
+                  a.sliding-link(href='#goto-atelier') Nos ateliers
+                li
+                  a.sliding-link(href='#goto-noustrouver') Nous trouver
+              else
+                li
+                  a(href='/#goto-atelier') Nos ateliers
+                li
+                  a(href='/#goto-noustrouver') Nous trouver
+              li
+                a(href='/contact') Nous contacter
+          .col-sm-2
+            ul
+              li
+                a(href='/juridique') CGU
+              li
+                a(href='/juridique#mentions') Mentions légales
+          .col-sm-3
+            .social-networks
+              a.facebook(href='https://www.facebook.com/les.amis.du.chocolat/')
+                i.fa.fa-facebook
+              a.instagram(href='https://www.instagram.com/explore/tags/chocolat/')
+                i.fa.fa-instagram(aria-hidden='true')
+              a.pinterest(href='https://www.pinterest.fr/eplougoulm/-chocolat-en-joie-nos-recettes/')
+                i.fa.fa-pinterest(aria-hidden='true')
+            a(href='/contact')
+              button.btn.btn-default(type='button') Contactez nous
+      .footer-copyright
+        p Made with love by the Cocoa team... and Fabwild, Cris tof, Alexis, Camillllle, Carla, Polo and all the Paris crew! 
+        p © 2017 Chocolat en Joie
+    // /.Footer
+    // Google analytic
+    script(type='text/javascript').
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-Y']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+      })();
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // Global Javascript file
+    script(src='/javascripts/script.js')
+    // Utilisation des cookies
+    script(src='https://www.google.com/recaptcha/api.js')
+    script(src='/javascripts/ancres.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')

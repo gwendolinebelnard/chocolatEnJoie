@@ -1,0 +1,28 @@
+extends layout
+include mixins
+block content
+    section.nosproduits
+      .container-fluid
+        .row
+          .col-xs-12.text-center.bgPageProduits
+            div
+              // <div class="items-home"> <img class="logohome" src="/images/logo-white.svg" alt=""></div>
+              h2.titrePageProduit.center-block
+                | Nos 
+                br
+                | chocolats
+              h3.items-home.sousTitreSection
+                | “Le seul moyen de se délivrer d'une tentation, c'est d'y céder..." 
+                br
+                |  Oscar Wilde
+              a(href='./produits/chocolat-noir')
+                button(class="btn btn-info btn-lg")  Chocolat noir
+              a(href='./produits/chocolat-blanc')
+                button(class="btn btn-info btn-lg")  Chocolat blanc
+              a(href='./produits/chocolat-lait')
+                button(class="btn btn-info btn-lg")  Chocolat lait
+              a(href='./produits/chocolat-mix')
+                button(class="btn btn-info btn-lg") Chocolat mix
+
+
+

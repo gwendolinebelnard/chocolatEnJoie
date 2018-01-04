@@ -1,0 +1,47 @@
+extends layout
+
+block content
+
+
+    section.nosproduits
+      .container-fluid
+        .row
+          .col-xs-12.text-center.bgPageProduits
+            div
+              // <div class="items-home"> <img class="logohome" src="/images/logo-white.svg" alt=""></div>
+              h2.titrePageProduit.center-block
+                | Nos 
+                br
+                | chocolats au lait 
+              h3.items-home.sousTitreSection
+              a(href='/produits/chocolat-blanc')
+                button(class="btn btn-info btn-lg")  Chocolats blancs
+              a(href='./chocolat-noir')
+                button(class="btn btn-info btn-lg")  Chocolats noirs
+              a(href='./chocolat-mix')
+                button(class="btn btn-info btn-lg") Chocolats mix
+
+
+              
+      each valeur in informations    
+       .container-fluid 
+        .containerSuggestions
+          .col-md-offset-3.col-md-6.col-xs-12
+            .row.ecartementTextEtImage
+              .col-sm-6.col-sm-offset-3
+                a(href='#')
+                  .suggestion-wrapper.suggestion
+                    .row
+                      .col-sm-12.colNoPadding
+                        img.img-responsive(src="/images/" + valeur.image, alt='')
+                    .row
+                      .text-center.col-sm-12
+                        h3=valeur.name
+                    .row
+                      .text-center.col-sm-12
+                        h5=valeur.composition
+                    .row
+                      .text-center.col-sm-6.suggestionNbPieces
+                        h4=valeur.quantity
+                      .text-center.col-sm-6.suggestionPoids
+                        h5=valeur.weight

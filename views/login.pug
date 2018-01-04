@@ -1,0 +1,14 @@
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+
+h1.text-center Welcome chocolate lovers  !!
+p.text-center Afin d'accèder à l'espace d'administration de chocolat en joie.com, merci d'inscrire vottre login et votre mot de passe dans les champs correspondants. 
+
+
+.container
+  form.form-signin(method="POST")
+    label.sr-only(for='inputLogin') Login
+    input#inputEmail.form-control(name='login', placeholder='Login', required='', autofocus='')
+    label.sr-only(for='inputPassword') Password
+    input#inputPassword.form-control(name='password', placeholder='Password', type='password' required='')
+    .checkbox
+    button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
